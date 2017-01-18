@@ -2,7 +2,7 @@ class ShowsController < ApplicationController
 
   def index
     authenticate_user!
-    shows = current_user.shows
+    shows = current_user.favourites
     render :json => shows
   end
 

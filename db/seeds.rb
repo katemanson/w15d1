@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Show.delete_all
+Show.destroy_all
 shows = Show.create([
   {
     "title": "The Great British Bake Off",
@@ -45,11 +45,11 @@ shows = Show.create([
   }
 ])
 
-User.delete_all
-user1 = User.create({name: "Jamie"})
-user2 = User.create({name: "Wanda"})
+User.destroy_all
+user1 = User.create!({email: "jamie@email.com", password: "password", password_confirmation: "password"})
+user2 = User.create!({email: "wanda@email.com", password: "password", password_confirmation: "password"})
 
-FavouriteShow.delete_all
+FavouriteShow.destroy_all
 user1.favourites << Show.all
 user2.favourites << Show.first
 user2.favourites << Show.last

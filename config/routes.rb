@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   scope path: 'api' do
-    resources :shows do
-      resources :favourited_by
-    end
+    resources :shows
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
