@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118071634) do
+ActiveRecord::Schema.define(version: 20170118160253) do
 
   create_table "favourite_shows", force: :cascade do |t|
     t.integer  "user_id"
