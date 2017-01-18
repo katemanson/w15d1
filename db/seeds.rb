@@ -44,3 +44,12 @@ shows = Show.create([
     "programmeId": "ohShitDoomed" 
   }
 ])
+
+User.delete_all
+user1 = User.create({name: "Jamie"})
+user2 = User.create({name: "Wanda"})
+
+FavouriteShow.delete_all
+user1.favourites << Show.all
+user2.favourites << Show.first
+user2.favourites << Show.last

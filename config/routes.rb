@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'api/shows' => 'shows#index'
-  post 'api/shows' => 'shows#create'
-
+  scope path: 'api' do
+    resources :shows do
+      resources :favourited_by
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
